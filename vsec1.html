@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login & Signup</title>
+
+<style>
+
+body{
+    font-family: Arial;
+    background-color: beige;
+    text-align: center;
+}
+
+nav{
+    background-color: lightblue;
+    padding: 15px;
+}
+
+nav a{
+    color: black;
+    text-decoration: none;
+    margin: 20px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.box{
+    background-color: white;
+    width: 300px;
+    margin: 30px auto;
+    padding: 20px;
+    border: 2px solid black;
+}
+
+input{
+    width: 90%;
+    padding: 8px;
+    margin: 5px;
+}
+
+button{
+    width: 95%;
+    padding: 8px;
+    background-color: lightblue;
+    color: black;
+    border: 1px solid black;
+    font-size: 16px;
+}
+
+#login{
+    display: none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+    <a onclick="signup()">Signup</a>
+    <a onclick="login()">Login</a>
+</nav>
+
+<div id="signup" class="box">
+
+<h2>Signup</h2>
+
+<form>
+
+<input type="text" placeholder="Enter Full Name" required><br>
+
+<input type="email" placeholder="Enter Email" required><br>
+
+<input type="password" id="pass1" placeholder="Create Password" required><br>
+
+<input type="checkbox" onclick="show1()"> Show Password
+
+<br><br>
+
+<button type="submit">Signup</button>
+
+</form>
+
+</div>
+
+<div id="login" class="box">
+
+<h2>Login</h2>
+
+<form>
+
+<input type="email" placeholder="Enter Email" required><br>
+
+<input type="password" id="pass2" placeholder="Enter Password" required><br>
+
+<input type="checkbox" onclick="show2()"> Show Password
+
+<br><br>
+
+<button type="submit">Login</button>
+
+</form>
+
+</div>
+
+<script>
+
+function signup()
+{
+    document.getElementById("signup").style.display="block";
+    document.getElementById("login").style.display="none";
+}
+
+function login()
+{
+    document.getElementById("signup").style.display="none";
+    document.getElementById("login").style.display="block";
+}
+
+function show1()
+{
+    var x = document.getElementById("pass1");
+
+    if(x.type=="password")
+        x.type="text";
+    else
+        x.type="password";
+}
+
+function show2()
+{
+    var x = document.getElementById("pass2");
+
+    if(x.type=="password")
+        x.type="text";
+    else
+        x.type="password";
+}
+
+</script>
+
+</body>
+</html>
