@@ -1,0 +1,231 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Sugar Cosmetics</title>
+
+<style>
+
+body{
+    font-family: Arial;
+    margin: 0;
+    text-align: center;
+
+    background-image: url(https://thewonk.in/wp-content/uploads/2025/03/Vineeta-Singh-Velocity-1-1024x576.jpg);
+    background-size: 130%;
+    background-repeat: no-repeat;
+    background-position: center190%;
+    
+    min-height: 20svh;
+}
+
+nav{
+    background-color: lightblue;
+    padding: 15px;
+}
+
+nav a{
+    color: black;
+    text-decoration: none;
+    margin: 20px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+
+
+.home h1{
+    background-color: white;
+    color: darkblue;
+    padding: 15px;
+}
+
+.start{
+    background-color: lightblue;
+    padding: 10px 25px;
+    border: 1px solid black;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.welcome-box.welcome-box{
+    background-color: white;
+    padding: 20px;
+    width: 450px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.welcome-box h1{
+    color: darkblue;
+    margin: 0 0 15px 0;
+}
+.box{
+    background-color: white;
+    width: 350px;
+    margin: 60px auto;
+    padding: 25px;
+    border: 2px solid black;
+}
+.start{
+    background-color: lightblue;
+    padding: 10px 25px;
+    border: 1px solid black;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input{
+    width: 90%;
+    padding: 8px;
+    margin: 5px;
+}
+
+button{
+    width: 95%;
+    padding: 8px;
+    background-color: lightblue;
+    color: black;
+    border: 1px solid black;
+    font-size: 16px;
+}
+
+#login{
+    display: none;
+}
+
+#signup{
+    display: none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+    <a onclick="home()">Home</a>
+    <a onclick="signup()">Signup</a>
+    <a onclick="login()">Login</a>
+
+</nav>
+
+<div id="home" class="home">
+
+    <div class="welcome-box">
+
+        <h1>Welcome to Sugar Cosmetics</h1>
+
+        <button class="start" onclick="signup()">Get Started</button>
+
+    </div>
+
+</div>
+
+
+
+
+<!-- Signup Page -->
+
+<div id="signup" class="box">
+
+    <h2>Signup</h2>
+
+    <form>
+
+        <input type="text" placeholder="Enter Full Name" required><br>
+
+        <input type="email" placeholder="Enter Email" required><br>
+
+        <input type="password" id="pass1" placeholder="Create Password" required><br>
+
+        <input type="checkbox" onclick="show1()"> Show Password
+
+        <br><br>
+
+        <button type="submit">Signup</button>
+
+    </form>
+
+</div>
+
+
+<!-- Login Page -->
+
+<div id="login" class="box">
+
+    <h2>Login</h2>
+
+    <form>
+
+        <input type="email" placeholder="Enter Email" required><br>
+
+        <input type="password" id="pass2" placeholder="Enter Password" required><br>
+
+        <input type="checkbox" onclick="show2()"> Show Password
+
+        <br><br>
+
+        <button type="submit">Login</button>
+
+    </form>
+
+</div>
+
+
+<script>
+
+function home()
+{
+    document.getElementById("home").style.display="block";
+    document.getElementById("signup").style.display="none";
+    document.getElementById("login").style.display="none";
+}
+
+function signup()
+{
+    document.getElementById("home").style.display="none";
+    document.getElementById("signup").style.display="block";
+    document.getElementById("login").style.display="none";
+}
+
+function login()
+{
+    document.getElementById("home").style.display="none";
+    document.getElementById("signup").style.display="none";
+    document.getElementById("login").style.display="block";
+}
+
+function show1()
+{
+    var x = document.getElementById("pass1");
+
+    if(x.type=="password")
+        x.type="text";
+    else
+        x.type="password";
+}
+
+function show2()
+{
+    var x = document.getElementById("pass2");
+
+    if(x.type=="password")
+        x.type="text";
+    else
+        x.type="password";
+}
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
