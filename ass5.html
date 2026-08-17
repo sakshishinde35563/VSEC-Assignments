@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Assignment 5</title>
+
+<style>
+
+body{
+    text-align:center;
+    font-family:Arial;
+}
+
+.main{
+    width:200px;
+    height:200px;
+    margin:100px auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    position:relative;
+}
+
+.box{
+    border:2px solid white;
+    transition:1s;
+}
+
+.box1{background-color:red;}
+.box2{background-color:blue;}
+.box3{background-color:green;}
+.box4{background-color:yellow;}
+
+.main:hover .box1{
+    transform:translateX(-30px) rotate(90deg);
+    background-color:purple;
+}
+
+.main:hover .box3{
+    transform:translateX(-30px) rotate(90deg);
+    background-color:purple;
+}
+
+.main:hover .box2{
+    transform:translateX(30px) rotate(90deg);
+    background-color:purple;
+}
+
+.main:hover .box4{
+    transform:translateX(30px) rotate(90deg);
+    background-color:purple;
+}
+
+.text{
+    position:absolute;
+    top:80px;
+    left:75px;
+    color:black;
+    font-weight:bold;
+    display:none;
+}
+
+.main:hover .text{
+    display:block;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="main">
+
+    <div class="box box1"></div>
+    <div class="box box2"></div>
+    <div class="box box3"></div>
+    <div class="box box4"></div>
+
+    <div class="text">Hello</div>
+
+</div>
+
+</body>
+</html>
