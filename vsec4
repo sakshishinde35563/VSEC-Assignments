@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="c" width="500" height="400"
+style="border:1px solid black;">
+</canvas>
+
+<script>
+let c = document.getElementById("c");
+let ctx = c.getContext("2d");
+
+c.onclick = function(e) {
+
+    let x = e.offsetX;
+    let y = e.offsetY;
+
+    ctx.fillStyle = "gold";
+
+    ctx.beginPath();
+
+    // Draw a star
+    for (let i = 0; i < 10; i++) {
+
+        let r = i % 2 == 0 ? 30 : 15;
+        let a = i * Math.PI / 5;
+
+        let starX = x + Math.cos(a) * r;
+        let starY = y + Math.sin(a) * r;
+
+        if (i == 0)
+            ctx.moveTo(starX, starY);
+        else
+            ctx.lineTo(starX, starY);
+    }
+
+    ctx.fill();
+};
+</script>
+
+</body>
+</html>
