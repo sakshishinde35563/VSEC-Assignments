@@ -1,0 +1,93 @@
+//QUERIES//
+
+use("college");
+
+// 1. INSERT ONE
+db.student.insertOne({
+    name: "Rahul",
+    age: "20",
+    city: "Mumbai",
+    marks: "85"
+});
+
+// 2. INSERT MANY
+db.student.insertMany([
+    { name: "Amit", age: "21", city: "Pune", marks: "75" },
+    { name: "Priya", age: "19", city: "Nashik", marks: "90" }
+]);
+
+// 3. FIND ALL
+db.student.find();
+
+// 4. FIND ALL NEATLY
+db.student.find().pretty();
+
+// 5. FIND ONE
+db.student.findOne({ name: "Rahul" });
+
+// 6. FIND BY CITY
+db.student.find({ city: "Pune" });
+
+// 7. FIND BY MARKS
+db.student.find({ marks: "90" });
+
+// 8. UPDATE ONE
+db.student.updateOne(
+    { name: "Rahul" },
+    { $set: { marks: "95" } }
+);
+
+// 9. UPDATE MANY
+db.student.updateMany(
+    { city: "Pune" },
+    { $set: { city: "Mumbai" } }
+);
+
+// 10. DELETE ONE
+db.student.deleteOne({ name: "Amit" });
+
+// 11. DELETE MANY
+db.student.deleteMany({ city: "Nashik" });
+
+// 12. GREATER THAN
+db.student.find({ marks: { $gt: "75" } });
+
+// 13. LESS THAN
+db.student.find({ marks: { $lt: "75" } });
+
+// 14. GREATER THAN OR EQUAL
+db.student.find({ marks: { $gte: "75" } });
+
+// 15. LESS THAN OR EQUAL
+db.student.find({ marks: { $lte: "75" } });
+
+// 16. NOT EQUAL
+db.student.find({ city: { $ne: "Pune" } });
+
+// 17. AND
+db.student.find({
+    age: { $gt: "19" },
+    marks: { $gt: "70" }
+});
+
+// 18. OR
+db.student.find({
+    $or: [
+        { city: "Pune" },
+        { city: "Mumbai" }
+    ]
+});
+
+// 19. SORT LOW TO HIGH
+db.student.find().sort({ marks: 1 });
+
+// 20. SORT HIGH TO LOW
+db.student.find().sort({ marks: -1 });
+
+// 21. LIMIT TO 2 RECORDS
+db.student.find().limit(2);
+
+// 22. COUNT RECORDS
+db.student.countDocuments();
+
+db.student.find();
